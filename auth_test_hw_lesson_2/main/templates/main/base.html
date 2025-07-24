@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Базовый шаблон</title></head>
+<body>
+<nav>
+    <a href="{% url 'index' %}">Главная</a> |
+    <a href="{% url 'profile' %}">Профиль</a> |
+    <a href="{% url 'login' %}">Вход</a> |
+    <form action="{% url 'logout' %}" method="post" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit">Выход</button>
+    </form>
+</nav>
+<hr>
+{% block content %}{% endblock %}
+</body>
+</html>
